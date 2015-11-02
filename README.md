@@ -1,7 +1,10 @@
 # Simple command line argumentes parser
 
 ## Project details
-0.1 - current stable version
+Stable version - [args-parser-0.3.jar](http://nexus.beolnix.com/service/local/repositories/releases/content/com/beolnix/args-parser/0.3/args-parser-0.3.jar)
+Dev version - [args-parser-0.4-SNAPSHOT.jar](http://nexus.beolnix.com/service/local/repositories/releases/content/com/beolnix/args-parser/0.4-SNAPSHOT/args-parser-0.4-SNAPSHOT.jar)
+[Sonar report](http://sonar.beolnix.com/dashboard/index/beolnix_ArgsParser) - for DEV
+
 
 ## Adding parser to your project
 ### Maven
@@ -37,10 +40,13 @@ dependencies {
 }
 ```
 
+### Binaries
+You may also simply download [args-parser-0.3.jar](http://nexus.beolnix.com/service/local/repositories/releases/content/com/beolnix/args-parser/0.3/args-parser-0.3.jar) and just add it to your classpath.
+
 ### Build from sources
 Project build prerequirements:
-+ JDK 1.8+
-+ Maven 3.2+
+1. JDK 1.8+
+2. Maven 3.2+
 
 Simply execute the following to build the project and may the force be with you
 ```bash

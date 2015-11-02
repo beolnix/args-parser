@@ -4,7 +4,7 @@
 
     <groupId>com.beolnix</groupId>
     <artifactId>args-parser</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
 
     <description>Simple command line arguments parser.</description>
 
