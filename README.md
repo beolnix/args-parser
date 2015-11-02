@@ -19,7 +19,7 @@ To use binaries just add the following lines into the pom.xml file of your maven
      <dependency>
         <groupId>com.beolnix</groupId>
         <artifactId>args-parser</artifactId>
-        <version>0.1</version>
+        <version>0.3</version>
      </dependency>
 </dependencies>
 ```
@@ -33,7 +33,7 @@ repositories {
     }
 }
 dependencies {
-    compile "com.beolnix:args-parser:0.1"
+    compile "com.beolnix:args-parser:0.3"
 }
 ```
 
