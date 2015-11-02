@@ -19,7 +19,7 @@ public interface ArgumentsParser {
      * Throws exception if unsupported argument found.
      *
      * @param args array of command line arguments
-     * @return Map of parsed command like arguments
+     * @return not null Map of parsed command like arguments
      * @throws UnknownFlag if unsupported argument found.
      */
     public Map<CommandLineArgument, String> parse(String[] args) throws UnknownFlag;

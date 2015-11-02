@@ -28,7 +28,7 @@ public class UsageExample {
         Map<CommandLineArgument, String> passedArgs = argsParser.parse(args);
 
         // check if arg has been passed
-        if (passedArgs != null && passedArgs.containsKey(someArg)) {
+        if (passedArgs.containsKey(someArg)) {
             //process some arg passed to the program here
             System.out.println("you passed " + someArg.getFlags()[0] + " " +
                     "with " + passedArgs.get(someArg) + " value");
