@@ -8,6 +8,18 @@
 
     <description>Simple command line arguments parser.</description>
 
+    <licenses>
+        <license>
+            <name>The MIT License (MIT)</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>git@github.com:beolnix/args-parser.git</url>
+    </scm>
+
     <developers>
         <developer>
             <email>atmakin.dv@gmail.com</email>
