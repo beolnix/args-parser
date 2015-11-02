@@ -2,9 +2,7 @@
 
 ## Project details
 Stable version - [args-parser-0.3.jar](http://nexus.beolnix.com/service/local/repositories/releases/content/com/beolnix/args-parser/0.3/args-parser-0.3.jar)
-Dev version - [args-parser-0.4-SNAPSHOT.jar](http://nexus.beolnix.com/service/local/repositories/releases/content/com/beolnix/args-parser/0.4-SNAPSHOT/args-parser-0.4-SNAPSHOT.jar)
 [Sonar report](http://sonar.beolnix.com/dashboard/index/beolnix_ArgsParser) - for DEV
-
 
 ## Adding parser to your project
 ### Maven
