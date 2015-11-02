@@ -22,7 +22,11 @@ public class ArgumentsHelper {
      * @return
      */
     public boolean consistOfHelp(Map<CommandLineArgument, String> passedArgs) {
-        return passedArgs.containsKey(helpCommandLineArgument);
+        if (passedArgs == null) {
+            return false;
+        } else {
+            return passedArgs.containsKey(helpCommandLineArgument);
+        }
     }
 
 }

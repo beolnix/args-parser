@@ -12,40 +12,33 @@ import java.util.Map;
  */
 public class UsageExample {
 
-    static CommandLineArgument someArg = new CommandLineArgumentBuilder()
-            .withDescription("Description of the argument. " +
-                    "The description will be automatically sliced if it longer then 30 chars.")
-            .withExample("-s ./path/to/file")
-            .withFlags("-s", "--source")
-            .build();
+    public static void main(String[] args) throws UnknownFlag {
+        // define supported arguments
+        CommandLineArgument someArg = new CommandLineArgumentBuilder()
+                .withDescription("Description of the argument. " +
+                        "The description will be automatically sliced if it longer then 30 chars.")
+                .withExample("-s ./path/to/file")
+                .withFlags("-s", "--source")
+                .build();
 
-    public static void main(String[] args) {
-        ArgumentsParser argsParser = new DefaultArgumentsParser(getSupportedArgs());
+        // initialize parser
+        ArgumentsParser argsParser = new DefaultArgumentsParser(someArg);
 
-        try {
+        //parse passed arguments
+        Map<CommandLineArgument, String> passedArgs = argsParser.parse(args);
 
-            Map<CommandLineArgument, String> passedArgs = argsParser.parse(args);
-            if (passedArgs.containsKey(someArg)) {
-                //process some arg passed to the program here
-                System.out.println("you passed " + someArg.getFlags()[0] + " " +
-                        "with " + passedArgs.get(someArg) + " value");
-            }
-
-            if (new ArgumentsHelper().consistOfHelp(passedArgs)) {
-                //print help message here
-                System.out.println(argsParser.getHelpMessage());
-            }
-
-
-        } catch (UnknownFlag e) {
-            // process here situation of unknown argument. pring help for example.
-            System.out.println(e.getUnknownFlag() + " - argument is not supported. Use --help to see supported arguments.");
+        // check if arg has been passed
+        if (passedArgs != null && passedArgs.containsKey(someArg)) {
+            //process some arg passed to the program here
+            System.out.println("you passed " + someArg.getFlags()[0] + " " +
+                    "with " + passedArgs.get(someArg) + " value");
         }
 
-
+        // check if help message has been requested
+        if (new ArgumentsHelper().consistOfHelp(passedArgs)) {
+            //print help message here
+            System.out.println(argsParser.getHelpMessage());
+        }
     }
 
-    public static CommandLineArgument[] getSupportedArgs() {
-        return new CommandLineArgument[] {someArg};
-    }
 }
