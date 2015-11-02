@@ -32,12 +32,21 @@ import java.util.stream.Stream;
 
 /**
  * Help message printer is used to get nicely formatted help message.
+ * update description size column size and cellPadding to improve look&feel
  * Created by beolnix on 29/08/15.
  */
 public class HelpPrinter {
 
-    private final static int cellPadding = 5;
-    private final static int descriptionColumnSize = 30;
+    /**
+     * Space between columns
+     */
+    private int cellPadding = 5;
+
+    /**
+     * Too long descriptions are sliced automatically.
+     * Description Column Size - is the number of characters allowed on a line in description column.
+     */
+    private int descriptionColumnSize = 30;
 
     public HelpPrinter() {
     }
@@ -163,4 +172,19 @@ public class HelpPrinter {
             ).get().length() + cellPadding;
     }
 
+    public int getCellPadding() {
+        return cellPadding;
+    }
+
+    public void setCellPadding(int cellPadding) {
+        this.cellPadding = cellPadding;
+    }
+
+    public int getDescriptionColumnSize() {
+        return descriptionColumnSize;
+    }
+
+    public void setDescriptionColumnSize(int descriptionColumnSize) {
+        this.descriptionColumnSize = descriptionColumnSize;
+    }
 }

@@ -28,6 +28,7 @@ import com.beolnix.trpg.cmdargs.utils.CommandLineArgumentBuilder;
 import com.beolnix.trpg.cmdargs.error.UnknownFlag;
 import com.beolnix.trpg.cmdargs.impl.DefaultArgumentsParser;
 import com.beolnix.trpg.cmdargs.model.CommandLineArgument;
+import com.beolnix.trpg.cmdargs.utils.HelpPrinter;
 
 import java.util.Map;
 
@@ -36,11 +37,14 @@ import java.util.Map;
  */
 public class UsageExample {
 
+    private final static HelpPrinter helpPrinter = new HelpPrinter();
+
     public static void main(String[] args) throws UnknownFlag {
         // define supported arguments
         CommandLineArgument someArg = new CommandLineArgumentBuilder()
                 .withDescription("Description of the argument. " +
-                        "The description will be automatically sliced if it longer then 30 chars.")
+                        "The description will be automatically sliced if it longer then " +
+                        helpPrinter.getDescriptionColumnSize() + " chars.")
                 .withExample("-s ./path/to/file")
                 .withFlags("-s", "--source")
                 .build();
